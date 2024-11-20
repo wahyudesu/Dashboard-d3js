@@ -1,0 +1,44 @@
+{
+  "salesData": {
+    "monthly": {
+      "sales": [1200, 1900, 3000, 5000, 2000, 3000, 4000, 3800, 4200, 5500, 6500, 7000],
+      "revenue": [2400, 3800, 6000, 10000, 4000, 6000, 8000, 7600, 8400, 11000, 13000, 14000],
+      "profit": [600, 950, 1500, 2500, 1000, 1500, 2000, 1900, 2100, 2750, 3250, 3500]
+    },
+    "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  },
+  "productData": {
+    "labels": ["Laptop", "Smartphone", "Tablet", "Accessories", "Wearables"],
+    "sales": [450, 300, 200, 150, 100],
+    "growth": [25, 15, 10, 20, 30],
+    "details": {
+      "Laptop": { "avg_price": 1000, "units_sold": 450 },
+      "Smartphone": { "avg_price": 700, "units_sold": 300 },
+      "Tablet": { "avg_price": 400, "units_sold": 200 },
+      "Accessories": { "avg_price": 50, "units_sold": 150 },
+      "Wearables": { "avg_price": 150, "units_sold": 100 }
+    }
+  },
+  "branchData": [
+    { "nama_cabang": "Surabaya", "latitude": -72.575, "longitude": 1.127521 },
+    { "nama_cabang": "Malang", "latitude": -79.667, "longitude": 1.126173 },
+    { "nama_cabang": "Bandung", "latitude": -69.175, "longitude": 1.076191 },
+    { "nama_cabang": "Jember", "latitude": -81.667, "longitude": 1.136914 },
+    { "nama_cabang": "Kediri", "latitude": -78.423, "longitude": 1.120136 },
+    { "nama_cabang": "Banyuwangi", "latitude": -82.167, "longitude": 1.143667 },
+    { "nama_cabang": "Probolinggo", "latitude": -77.667, "longitude": 1.132178 },
+    { "nama_cabang": "Madiun", "latitude": -76.308, "longitude": 1.115294 },
+    { "nama_cabang": "Sidoarjo", "latitude": -74.425, "longitude": 1.127093 },
+    { "nama_cabang": "Pasuruan", "latitude": -7.64, "longitude": 1.129105 },
+    { "nama_cabang": "Lamongan", "latitude": -70.465, "longitude": 1.123975 },
+    { "nama_cabang": "Bojonegoro", "latitude": -71.333, "longitude": 1.119273 },
+    { "nama_cabang": "Tuban", "latitude": -68.989, "longitude": 1.120774 },
+    { "nama_cabang": "Magetan", "latitude": -76.342, "longitude": 1.114282 },
+    { "nama_cabang": "Blitar", "latitude": -80.973, "longitude": 1.121627 },
+    { "nama_cabang": "Jombang", "latitude": -75.477, "longitude": 1.122331 },
+    { "nama_cabang": "Tulungagung", "latitude": -80.697, "longitude": 112.021 },
+    { "nama_cabang": "Situbondo", "latitude": -77.028, "longitude": 1.139464 },
+    { "nama_cabang": "Ngawi", "latitude": -73.146, "longitude": 1.114534 },
+    { "nama_cabang": "Bondowoso", "latitude": -78.686, "longitude": 113.82 }
+  ]
+}
