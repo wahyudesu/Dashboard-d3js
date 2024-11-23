@@ -195,8 +195,10 @@ function App() {
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
           <h2 className="text-xl font-semibold mb-4 dark:text-white">Wahyu Ikbal Maulana</h2>
           <h2 className="text-xl font-semibold dark:text-white mb-4">3323600056</h2>
+          <h2 className="text-xl font-semibold dark:text-white">Dosen pengampu:</h2>
+          <h2 className="text-xl font-semibold dark:text-white mb-4">Pak Edi</h2>
           <h2 className="text-xl font-semibold dark:text-white">Teknologi yang digunakan:</h2>
-          <h2 className="text-xl font-semibold dark:text-white">Vite + React + Ts + D3.js</h2>
+          <h2 className="text-xl font-semibold dark:text-white">Vite + React + Ts + Magic UI + Leaflet js + D3.js</h2>
         </div>
       </div>
     </div>
