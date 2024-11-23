@@ -198,7 +198,7 @@ function App() {
           <h2 className="text-xl font-semibold dark:text-white">Dosen pengampu:</h2>
           <h2 className="text-xl font-semibold dark:text-white mb-4">Pak Edi</h2>
           <h2 className="text-xl font-semibold dark:text-white">Teknologi yang digunakan:</h2>
-          <h2 className="text-xl font-semibold dark:text-white">Vite + React + Ts + Magic UI + Leaflet js + D3.js</h2>
+          <h2 className="text-xl font-semibold dark:text-white">Vite + React + Ts + Tailwind CSS + Magic UI + Leaflet js + D3.js</h2>
         </div>
       </div>
     </div>
