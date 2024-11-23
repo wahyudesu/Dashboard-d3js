@@ -45,7 +45,7 @@ export const SalesChart: React.FC<SalesChartProps> = ({ data, isDark }) => {
     g.append("g")
       .attr("transform", `translate(0,${height})`)
       .call(d3.axisBottom(x))
-      .attr("class", isDark ? "text-gray-600" : "text-gray-600")
+      .attr("class", isDark ? "text-gray-400" : "text-gray-600")
       .selectAll("text")
       .attr("transform", "rotate(-45)")
       .style("text-anchor", "end");
@@ -53,7 +53,7 @@ export const SalesChart: React.FC<SalesChartProps> = ({ data, isDark }) => {
     // Add Y axis
     g.append("g")
       .call(d3.axisLeft(y))
-      .attr("class", isDark ? "text-gray-600" : "text-gray-600");
+      .attr("class", isDark ? "text-gray-400" : "text-gray-600");
 
     // Add lines
     const line = d3.line<number>()

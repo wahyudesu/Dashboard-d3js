@@ -1,41 +1,59 @@
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
-import dashboardData from "../data/dashboard.json";
+import React, { useEffect } from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 
-delete L.Icon.Default.prototype._getIconUrl;
+// Fix Leaflet's default icon issue
+delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-  iconUrl: require("leaflet/dist/images/marker-icon.png"),
-  shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
+  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
 });
 
-const BranchMap = () => {
-  const branches = dashboardData.branchData;
+interface Branch {
+  nama_cabang: string;
+  latitude: number;
+  longitude: number;
+}
+
+interface BranchMapProps {
+  data: Branch[];
+  isDark: boolean;
+}
+
+export const BranchMap: React.FC<BranchMapProps> = ({ data, isDark }) => {
+  useEffect(() => {
+    // Force a resize event after component mounts to ensure map renders correctly
+    setTimeout(() => {
+      window.dispatchEvent(new Event('resize'));
+    }, 200);
+  }, []);
 
   return (
-    <div style={{ height: "100vh" }}>
+    <div className="relative w-full h-[400px] rounded-lg overflow-hidden">
       <MapContainer
-        center={[-7.5, 112.5]}
-        zoom={7}
-        style={{ width: "100%", height: "100%" }}
+        center={[-7.5575, 112.127521]}
+        zoom={8}
+        style={{ height: '100%', width: '100%' }}
+        className={`${isDark ? 'map-dark' : ''} z-0`}
       >
         <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url={isDark 
+            ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+            : 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+          }
         />
-        {branches.map((branch, index) => (
+        {data.map((branch, index) => (
           <Marker
             key={index}
-            position={[branch.latitude, branch.longitude]} // Use latitude and longitude
-            title={branch.nama_cabang} // Tooltip title
+            position={[branch.latitude, branch.longitude]}
           >
             <Popup>
-              <b>{branch.nama_cabang}</b>
-              <br />
-              Latitude: {branch.latitude}
-              <br />
-              Longitude: {branch.longitude}
+              <div className={`font-semibold ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
+                {branch.nama_cabang}
+              </div>
             </Popup>
           </Marker>
         ))}
@@ -43,5 +61,3 @@ const BranchMap = () => {
     </div>
   );
 };
-
-export default BranchMap;
