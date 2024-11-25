@@ -69,7 +69,7 @@ function App() {
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-200">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-200">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-500 dark:text-gray-400">Total Revenue</p>
@@ -80,7 +80,7 @@ function App() {
               <LineChart className="w-8 h-8 text-blue-500" />
             </div>
           </div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-200">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-200">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-500 dark:text-gray-400">Total Sales</p>
@@ -91,7 +91,7 @@ function App() {
               <BarChart className="w-8 h-8 text-green-500" />
             </div>
           </div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-200">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-200">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-500 dark:text-gray-400">Total Profit</p>
@@ -102,7 +102,7 @@ function App() {
               <TrendingUp className="w-8 h-8 text-red-500" />
             </div>
           </div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-200">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-200">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-500 dark:text-gray-400">Total Product</p>
@@ -117,22 +117,22 @@ function App() {
 
         {/* Charts */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-          <div className="col-span-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:ring">
+          <div className="col-span-2 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:ring">
             <h2 className="text-xl font-semibold mb-4 text-black dark:text-white">Monthly Performance</h2>
             <SalesChart data={dashboardData.salesData} isDark={isDark} />
           </div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:ring">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:ring">
             <h2 className="text-xl font-semibold mb-4 text-black dark:text-white">Product Distribution</h2>
             <ProductPieChart data={dashboardData.productData} isDark={isDark} />
           </div>
         </div>
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 ">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:ring">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:ring">
             <h2 className="text-xl font-semibold mb-4 dark:text-white">Product Growth</h2>
             <GrowthChart data={dashboardData.productData} isDark={isDark} />
           </div>
           {/* Product Details Table */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:ring">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:ring">
             <h2 className="text-xl font-semibold mb-4 dark:text-white">Product Details</h2>
             <div className="overflow-x-auto">
               <table className="min-w-full">
@@ -187,7 +187,7 @@ function App() {
         </div>
 
         <div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:ring">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:ring">
             <h2 className="text-xl font-semibold mb-4 dark:text-white">Lokasi</h2>
             <BranchMap data={dashboardData.branchData} isDark={isDark} />
           </div>

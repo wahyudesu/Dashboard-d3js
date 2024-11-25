@@ -19,10 +19,9 @@ interface Branch {
 
 interface BranchMapProps {
   data: Branch[];
-  isDark: boolean;
 }
 
-export const BranchMap: React.FC<BranchMapProps> = ({ data, isDark }) => {
+export const BranchMap: React.FC<BranchMapProps> = ({ data }) => {
   useEffect(() => {
     // Force a resize event after component mounts to ensure map renders correctly
     setTimeout(() => {
@@ -36,14 +35,11 @@ export const BranchMap: React.FC<BranchMapProps> = ({ data, isDark }) => {
         center={[-7.5575, 112.127521]}
         zoom={8}
         style={{ height: '100%', width: '100%' }}
-        className={`${isDark ? 'map-dark' : ''} z-0`}
+        className="z-0"
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url={isDark 
-            ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-            : 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-          }
+          url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         />
         {data.map((branch, index) => (
           <Marker
@@ -51,7 +47,7 @@ export const BranchMap: React.FC<BranchMapProps> = ({ data, isDark }) => {
             position={[branch.latitude, branch.longitude]}
           >
             <Popup>
-              <div className={`font-semibold ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
+              <div className="font-semibold text-gray-800">
                 {branch.nama_cabang}
               </div>
             </Popup>
